@@ -1,3 +1,14 @@
+document.addEventListener(
+    'DOMContentLoaded',
+    function(){
+        displayProducts();
+        displayCart();
+    }
+)
+    
+
+
+
 const products = [
     {id: 1, name: "Кофе", price: 78},
     {id: 2, name: "Чай", price: 67},
