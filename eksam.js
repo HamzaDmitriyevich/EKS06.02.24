@@ -1,22 +1,22 @@
-var produkt = [
+const products = [
     {id: 1, name: "Кофе"},
     {id: 2, name: "Чай"},
     {id: 3, name: "Сахар"}
 ];
 
-let karta = [];
+let cart = [];
 
-function produkts_disp(){
-    let prlist = document.getElementById("produkty");
+function displayProducts(){
+    const productList = document.getElementById("productList");
 
-    produkt.forEach(product => {
+    products.forEach(product => {
         
-        let prElement = document.createElement("button");
-        prElement.textContent = product.name;
-        prElement.onclick = 
+        const productElement = document.createElement("button");
+        productElement.textContent = product.name;
+        productElement.onclick = 
         function() {addToCart(product);};
 
-        produkty.appendChild(prElement);
+        productList.appendChild(productElement);
     } );
 }
 function addToCart(product){
@@ -25,21 +25,20 @@ function addToCart(product){
 }
 
 function displayCart(){
-    let cartElement = document.getElementById("cart");
-    let totarItmElement =document.getElementById("totalItm");
+    const cartElement = document.getElementById("cart");
+    const totalItemsElement =document.getElementById("totalItems");
 
     cartElement.innerHTML = "";
 
-    totarItmElement.textContent = cart.lenght;
+    totalItemsElement.textContent = cart.lenght;
 
     cart.forEach(product => {
-       let itemElement = document.createElement("li");
+       const itemElement = document.createElement("li");
        itemElement.textContent = product.name;
 
        cartElement.appendChild(itemElement);
         
     });
 
-    display.produkts_disp();
-
+    
 }
