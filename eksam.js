@@ -17,7 +17,7 @@ function produkts_disp(){
         function() {addToCart(product);};
 
         produkty.appendChild(prElement);
-    } )
+    } );
 }
 function addToCart(product){
     cart.push(product);
@@ -33,8 +33,13 @@ function displayCart(){
     totarItmElement.textContent = cart.lenght;
 
     cart.forEach(product => {
-       let itemElement
+       let itemElement = document.createElement("li");
+       itemElement.textContent = product.name;
+
+       cartElement.appendChild(itemElement);
         
-    })
+    });
+
+    display.produkts_disp();
 
 }
